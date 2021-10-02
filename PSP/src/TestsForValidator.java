@@ -78,7 +78,7 @@ public class TestsForValidator
     {
         String email = "email@gmail.com";
         boolean result = validator.validateEmail(email);
-        assertFalse(result);
+        assertTrue(result);
     }
 
     //Tests for phone number
