@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PasswordCheckerTest {
 
     private PasswordChecker passwordChecker = new PasswordChecker();
-
+    
     @Test
     void testPasswordLength_validLength() {
         assertTrue(passwordChecker.checkPasswordLength("password", 8));
