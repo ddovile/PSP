@@ -21,17 +21,23 @@ public class PhoneValidatorTest {
     }
 
     @Test
-    void testAddingNewValidationRule_withInvalidPrefix() {
-        assertFalse(phoneValidator.addNewValidationRule("+49", 11, "LT"));
+    void testAddingNewValidationRule_CorrectNumber() {
+        phoneValidator.addNewValidationRule("+371", 12, "LV");
+        assertTrue(phoneValidator.checkPhoneNumber("+37167284828", "LV"));
     }
 
     @Test
-    void testAddingNewValidationRule_withInvalidLength() {
-        assertFalse(phoneValidator.addNewValidationRule("+370", 5, "LT"));
+    void testAddingNewValidationRule_TooLongInternationalNumber() {
+        assertFalse(phoneValidator.checkPhoneNumber("+44640247822456", "UK"));
     }
 
     @Test
-    void testAddingNewValidationRule_withCorrectCase() {
-        assertTrue(phoneValidator.addNewValidationRule("+370", 11, "LT"));
+    void checkLtNumber_IncorrectPrefix() {
+        assertFalse(phoneValidator.checkPhoneNumber("+37164033084"));
+    }
+
+    @Test
+    void checkLtNumber_CorrectNumber() {
+        assertTrue(phoneValidator.checkPhoneNumber("+37064033084"));
     }
 }

@@ -34,4 +34,9 @@ public class EmailValidatorTest {
     void testForDomainAndTLD_invalidDomainAndTLD() {
         assertFalse(emailValidator.checkDomainAndTLD("tom@a.a"));
     }
+
+    @Test
+    void testForDomainAndTLD_invalidSymbolsDomain() {
+        assertFalse(emailValidator.checkDomainAndTLD("tom@gmail.@com"));
+    }
 }
