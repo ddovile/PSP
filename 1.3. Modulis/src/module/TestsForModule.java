@@ -51,9 +51,8 @@ class TestsForModule {
 		
 		User updatedUser = u;
 		updatedUser.name="NewName";
-		result = m.updateUser(updatedUser, path);
-		assertEquals(1, result);
-		
+		result = m.updateUser(updatedUser, path); //Update existing user
+		assertEquals(1, result);	
 	}
 	
 	@Test
@@ -66,7 +65,7 @@ class TestsForModule {
 		User updatedUser = u;
 		updatedUser.id = "-1";
 		
-		result = m.updateUser(updatedUser, path);
+		result = m.updateUser(updatedUser, path); //There is no user with ID = -1
 		assertEquals(-1, result);
 	}
 
@@ -77,13 +76,13 @@ class TestsForModule {
 		User u = new User(Id, "TestName", "TestSurname", "865099754" , "email@gmail.com", "Test street 12", "TestTest123/*-+");
 		int result = m.addUser(u, path);
 		
-		result = m.deleteUser(u.id, path);
+		result = m.deleteUser(u.id, path); //Delete existing user
 		assertEquals(1, result);
 	}
 	
 	@Test
 	void testDeleteUser_Fails() {		
-		int result = m.deleteUser("-1", path);
+		int result = m.deleteUser("-1", path); //There is no user with ID = -1
 		assertEquals(-1, result);
 	}
 

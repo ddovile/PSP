@@ -10,10 +10,6 @@ public class User
 	String address;
 	String password;
 
-    public User()
-    {
-    	
-    }
     public User(String id, String name, String surname, String phoneNumber, String email, String address, String password)
     {
     	this.id = id;
@@ -23,6 +19,5 @@ public class User
         this.email = email;
         this.address = address;
         this.password = password;
-    }
-   
+    }  
 }

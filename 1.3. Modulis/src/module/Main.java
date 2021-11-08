@@ -10,8 +10,10 @@ import edu.ernestas.Helpers.ValidationResult;
 
 
 
-public class Main {
-	public static String path = "D:\\Users\\User\\Desktop\\Users.txt";
+public class Main 
+{
+	public static String path = "Users.txt";
+
 	public static void main(String[] args) 
 	{
 		try 
@@ -22,7 +24,6 @@ public class Main {
 		{
 			System.out.println(e.getMessage());
 		}
-		
 	}
 	
 	public static User getNewUserInfo() throws Exception

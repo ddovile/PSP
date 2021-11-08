@@ -70,6 +70,7 @@ public class Actions {
     	}
     	return false;
     }
+
     public int delete(String id, String path)
     {
  	    int countOfActions = 0;
